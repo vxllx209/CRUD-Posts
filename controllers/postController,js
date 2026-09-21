@@ -1,0 +1,17 @@
+
+const db = require('../config/db');
+
+
+////////////////////////////
+// Listar todos los posts //
+////////////////////////////
+
+const index = async (req, res) => {
+  try {
+    const [posts] = await db.query('SELECT * FROM posts ORDER BY id DESC');
+    res.render('posts/index', { posts });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Error al obtener los posts' });
+  }
+};
