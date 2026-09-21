@@ -15,3 +15,16 @@ const index = async (req, res) => {
     res.status(500).json({ error: 'Error al obtener los posts' });
   }
 };
+
+// ==================================
+// FORMULARIO CREAR
+// ==================================
+
+const create = (req, res) => {
+  res.render('posts/create');
+}
+
+Module.exports = {
+  index,
+  create
+};  
