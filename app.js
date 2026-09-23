@@ -12,6 +12,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Configurar EJS
+app.set('view engine', 'ejs');
+
 // MIDLEWARES
 app.use(express.urlencoded({ extended: true }));
 
